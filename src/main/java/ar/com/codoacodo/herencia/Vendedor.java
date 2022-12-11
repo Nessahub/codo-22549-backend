@@ -1,4 +1,4 @@
-package ar.com.codoacodo.consola;
+package ar.com.codoacodo.herencia;
 
 public class Vendedor {
 

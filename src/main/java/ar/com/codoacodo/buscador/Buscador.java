@@ -30,16 +30,16 @@ public class Buscador {
 		//aca debo cargar el array con resultados con objetos de la clase del articulo
 		//simular que encontramos 3 resultados
 		
-		Articulo res1 = new Articulo();
-		Articulo res2 = new Articulo();
-		Articulo res3 = new Articulo();
+		//Articulo res1 = new Articulo();
+		//Articulo res2 = new Articulo();
+		//Articulo res3 = new Articulo();
 		
 		//instancio nuevamente el array de resultado
 		resultado = new Articulo[3];
 		
-		resultado[0]=res1;
-		resultado[0]=res2;
-		resultado[0]=res3;
+		//resultado[0]=res1;
+		//resultado[0]=res2;
+		//resultado[0]=res3;
 		
 		//actualizo la cantidad de resultado
 		cantRes = resultado.length;
