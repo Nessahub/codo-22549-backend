@@ -1,6 +1,7 @@
 package ar.com.codoacodo.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -13,34 +14,29 @@ import ar.com.codoacodo.dao.IArticuloDAO;
 import ar.com.codoacodo.dao.impl.ArticuloDAOMysqlImpl;
 import ar.com.codoacodo.domain.Articulo;
 
-@WebServlet("FindAllArticulosController")
-public class FindAllArticulosController extends HttpServlet{
-	
-	//http://localhost:8080/FindAllArticulosController -> ingresa a la direccion web
-	//Controlador web
+@WebServlet("/FindAllArticulosController")
+public class FindAllArticulosController extends HttpServlet {
+
+	//http://localhost:8080/webapp/FindAllArticulosController
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		IArticuloDAO dao = new ArticuloDAOMysqlImpl(); 
-		try {
-		List<Articulo> articulosBuscado = dao.findAll();
 		
-		System.out.println(articulosBuscado);
+		List<Articulo> articulosBuscado = new ArrayList<>();
+		try {
+			articulosBuscado = dao.findAll();		
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		super.doGet(req, resp);
+		
+		//guardo bajo el nombre productos una lista de articulos
+		req.setAttribute("productos", articulosBuscado);
+		
+		//redirect a otra pagina u otro servlet(Controller/WebServlet)
+		getServletContext().getRequestDispatcher("/listado.jsp").forward(req, resp);
 	}
-
 	
-	// aca aplicacion de consola
-	public static void main(String[] args) throws Exception {
-		
-		//obtner todos los articulo
-		
-		IArticuloDAO dao = new ArticuloDAOMysqlImpl(); 
-		
-		List<Articulo> articulosBuscado = dao.findAll();
-		
-		System.out.println(articulosBuscado);
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {	
+		doGet(req, resp);
 	}
-
 }
