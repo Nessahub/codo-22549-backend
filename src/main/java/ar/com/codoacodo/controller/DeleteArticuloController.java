@@ -1,17 +1,36 @@
 package ar.com.codoacodo.controller;
 
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import ar.com.codoacodo.dao.IArticuloDAO;
 import ar.com.codoacodo.dao.impl.ArticuloDAOMysqlImpl;
 
-public class DeleteArticuloController {
+@WebServlet("/DeleteArticuloController")
+public class DeleteArticuloController extends HttpServlet {
 
-	public static void main(String[] args) throws Exception {
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String id = req.getParameter("id");
 		
-		//eliminar un articulo por id=1
+		IArticuloDAO dao = new ArticuloDAOMysqlImpl();
 		
-		IArticuloDAO dao = new ArticuloDAOMysqlImpl(); 
+		try {
+			dao.delete(Long.parseLong(id));
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
 		
-		dao.delete(3L);
+		//redirect a otra pagina u otro servlet(Controller/WebServlet)
+		getServletContext().getRequestDispatcher("/FindAllArticulosController").forward(req, resp);
+		
 	}
 
 }

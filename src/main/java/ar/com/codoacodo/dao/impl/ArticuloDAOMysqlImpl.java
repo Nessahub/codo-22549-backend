@@ -140,4 +140,32 @@ public class ArticuloDAOMysqlImpl implements IArticuloDAO {
 		statement.execute();
 	}
 
+	@Override
+	public List<Articulo> search(String clave) throws Exception {
+				//pasos para conectarme a la db
+				//1 - obtener conexion: java.sql.Connection
+				Connection connection = AdministradorDeConexiones.getConnection();
+				
+				//2 - armar el java.sql.Statement
+				Statement statement = connection.createStatement();
+				
+				//3 - obtener los resultados: java.sql.ResultSet
+				String sql = "select * from articulo where titulo like '%"+clave+"%'";
+				ResultSet resultSet = statement.executeQuery(sql);
+				//1    2      3      4     5
+				//id|titulo|autor |precio|img
+				//1 |algo  | autox|100   |url
+				
+				//Interface i = new ClaseQueimplementa();
+				List<Articulo> articulos = new ArrayList<>();
+				
+				//4 - extraer los datos
+				while(resultSet.next()) {//true|false
+					//lo agrego a la lista de articulos
+					articulos.add(fromResultsetToArticulo(resultSet));
+				}
+				
+				return articulos;
+	}
+
 }

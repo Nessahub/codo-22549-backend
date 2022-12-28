@@ -26,4 +26,6 @@ public interface IArticuloDAO {
 	
 	//update articulo set c1=v1, c2=v2...., cN=vN where id = id
 	public void update(Articulo articulo) throws Exception;
+	
+	public List<Articulo> search(String clave) throws Exception;
 }
