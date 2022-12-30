@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Home</a>
+    <a class="navbar-brand" href="<%=request.getContextPath()%>/">Home</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -21,10 +21,11 @@
             Trabajos de Codo a Codo
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Html</a></li>
-            <li><a class="dropdown-item" href="#">JavaScript</a></li>
+            <li><a class="dropdown-item" href="https://github.com/Nessahub/codo-22549-frontend/blob/main/ActObli/index.html">Html</a></li>
+            <li><a class="dropdown-item" href="https://github.com/Nessahub/codo-22549-frontend/tree/main/Final%20Js">JavaScript</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Bootstrap</a></li>
+            <li><a class="dropdown-item" href="https://github.com/Nessahub/codo-22549-frontend/tree/main/Trabajo%20Practico%20Integrador">Bootstrap</a></li>
+   			<li><a class="dropdown-item" href="https://github.com/Nessahub/codo-22549-frontend/tree/main/TareaObliDatos">Datos</a></li>       
           </ul>
         </li>
         <li class="nav-item">

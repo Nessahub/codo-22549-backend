@@ -20,7 +20,9 @@
 					<p>Curso:</p>
 					<h6>JAVA Full Stack</h6></br>
 					<p>Profesor:</p>
-					<h6>Carlos López</h6>
+					<h6>Carlos López</h6></br>
+					<p>Días de Cursado:</p>
+					<h6>Martes y Jueves de 18:30hs a 20:00hs</h6>
 				</div>
 			</div>
 		</main>
