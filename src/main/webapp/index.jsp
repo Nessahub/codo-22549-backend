@@ -11,8 +11,16 @@
 			<div class="row">
 				<div class="col-12">
 					<h1>
-						#22549 - Marte y Jueves - 18:30 - 20:00 hs.
+						Codo a Codo 
 					</h1>
+					</br>
+					
+					<p>Nombre Completo:</p>
+					<h6>Sabrina Antonella Marchiori Ledda</h6></br>
+					<p>Curso:</p>
+					<h6>JAVA Full Stack</h6></br>
+					<p>Profesor:</p>
+					<h6>Carlos López</h6>
 				</div>
 			</div>
 		</main>
